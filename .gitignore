@@ -1,0 +1,91 @@
+# ==============================
+# Java / Maven
+# ==============================
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+.mvn/wrapper/maven-wrapper.jar
+
+# ==============================
+# IDE
+# ==============================
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# ==============================
+# OS
+# ==============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
+
+# ==============================
+# Environment / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Application generated files
+# ==============================
+uploads/
+temp/
+tmp/
+
+# ==============================
+# Database / Local data
+# ==============================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==============================
+# Trained ML models
+# ==============================
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.bin
+
+# Keep the models directory itself
+!models/.gitkeep
+
+# ==============================
+# Datasets
+# ==============================
+dataset/
+datasets/
+
+# ==============================
+# Generated CNN outputs
+# ==============================
+training-output/
+checkpoints/
+runs/
+
+# ==============================
+# Frontend generated dependencies
+# ==============================
+node_modules/
+dist/
+build/
+
+# ==============================
+# Coverage
+# ==============================
+.coverage
+htmlcov/

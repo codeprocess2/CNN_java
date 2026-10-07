@@ -1,0 +1,87 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.example:package-quality-inspection >---------------
+[INFO] Building Package Quality Inspection System 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ package-quality-inspection ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 5 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ package-quality-inspection ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ package-quality-inspection ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ package-quality-inspection ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ package-quality-inspection ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.packageinspection.ml.ImageClassificationServiceTest
+18:52:55.511 [main] INFO com.example.packageinspection.ml.MockImageClassificationService -- Executing Mock CNN Inference engine for filename: box_dent_sample.jpg
+[ERROR] Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.149 s <<< FAILURE! -- in com.example.packageinspection.ml.ImageClassificationServiceTest
+[ERROR] com.example.packageinspection.ml.ImageClassificationServiceTest.testDJLClassification_FallbackToMock -- Time elapsed: 0.041 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:220)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:187)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at com.example.packageinspection.ml.DJLImageClassificationService.init(DJLImageClassificationService.java:52)
+	at com.example.packageinspection.ml.ImageClassificationServiceTest.testDJLClassification_FallbackToMock(ImageClassificationServiceTest.java:26)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+[INFO] Running com.example.packageinspection.service.FileStorageServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s -- in com.example.packageinspection.service.FileStorageServiceTest
+[INFO] Running com.example.packageinspection.service.InspectionServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.945 s -- in com.example.packageinspection.service.InspectionServiceTest
+[INFO] Running com.example.packageinspection.service.SeverityCalculationServiceTest
+[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.015 s <<< FAILURE! -- in com.example.packageinspection.service.SeverityCalculationServiceTest
+[ERROR] com.example.packageinspection.service.SeverityCalculationServiceTest.testDetermineInitialStatus_LowConfidence -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <NEEDS_REVIEW> but was: <OPEN>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.example.packageinspection.service.SeverityCalculationServiceTest.testDetermineInitialStatus_LowConfidence(SeverityCalculationServiceTest.java:41)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   SeverityCalculationServiceTest.testDetermineInitialStatus_LowConfidence:41 expected: <NEEDS_REVIEW> but was: <OPEN>
+[ERROR] Errors: 
+[ERROR]   ImageClassificationServiceTest.testDJLClassification_FallbackToMock:26 » NullPointer
+[INFO] 
+[ERROR] Tests run: 12, Failures: 1, Errors: 1, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.622 s
+[INFO] Finished at: 2026-10-05T18:52:56+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.1.2:test (default-test) on project package-quality-inspection: There are test failures.
+[ERROR] 
+[ERROR] Please refer to C:\Users\Vansh Kapil\Documents\Sem5\JAVA\lab_work\project\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
